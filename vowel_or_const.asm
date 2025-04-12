@@ -1,5 +1,5 @@
 org 100h
-mov dx,'A'
+mov dx,''
 cmp dx,'A'
 jb a
 cmp dx,'Z'
