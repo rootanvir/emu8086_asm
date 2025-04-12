@@ -1,35 +1,17 @@
 org 100h
-mov dx,'A'
-cmp dx,'A'
-jb a
-cmp dx,'Z'
-ja a     
-
-add dx,32
+ mov ax,5
+ cmp ax,5
+ ja p
+ mov dx,offset less
+ mov ah,09h
+ int 21h
+ ret
  
-a:       
-cmp dx,'a'
-je b
-cmp dx,'e'
-je b
-cmp dx,'i'
-je b
-cmp dx,'o'
-je b
-cmp dx,'u'
-je b
-
-lea dx,msg2
-mov ah,09h
-int 21h
-ret
-
-b: 
-
-lea dx,msg1
-mov ah,09h
-int 21h
-ret
+ p:
+ mov dx,offset greater
+ mov ah,09h
+ int 21h
+ ret   
  
-msg1 db "Vowel$"
-msg2 db "Constant$"
+ less db "less$"
+ greater db "greater$"
