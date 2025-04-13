@@ -9,4 +9,4 @@ inc cx
 cmp cx,5
 jle l
 
-msg db "Hello world",13,10,""
+msg db "Hello world",13,10,"$"
